@@ -20,7 +20,7 @@ router.route('/latest/:channelid').get((req, res) => {
             if (req.query?.linkOnly === 'true') {
                 res.json(`https://youtu.be/${resp.data.items[0].id.videoId}`);
             } else {
-                res.json(`"${resp.data.items[0].snippet.title}" | https://youtu.be/${resp.data.items[0].id.videoId}`);
+                res.json(`"${unescapeHTML(resp.data.items[0].snippet.title)}" | https://youtu.be/${resp.data.items[0].id.videoId}`);
             }
         })
         .catch((err) => {
@@ -33,3 +33,17 @@ router.route('/latest/:channelid').get((req, res) => {
 });
 
 module.exports = router;
+
+// https://www.30secondsofcode.org/js/s/unescape-html
+const unescapeHTML = (str) =>
+    str.replace(
+        /&amp;|&lt;|&gt;|&#39;|&quot;/g,
+        (tag) =>
+            ({
+                '&amp;': '&',
+                '&lt;': '<',
+                '&gt;': '>',
+                '&#39;': "'",
+                '&quot;': '"',
+            }[tag] || tag)
+    );
