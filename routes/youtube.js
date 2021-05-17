@@ -15,7 +15,7 @@ require('dotenv').config();
 */
 router.route('/latest/:channelid').get((req, res) => {
     axios
-        .get(`https://www.googleapis.com/youtube/v3/search?key=AIzaSyAKGs1Ca5XM-xMbOBSAHT4hpG1kmj42BHM&channelId=${req.params.channelid}&part=snippet,id&order=date&maxResults=1`)
+        .get(`https://www.googleapis.com/youtube/v3/search?key=${process.env.YOUTUBE_KEY}&channelId=${req.params.channelid}&part=snippet,id&order=date&maxResults=1`)
         .then((resp) => {
             if (req.query?.linkOnly === 'true') {
                 res.json(`https://youtu.be/${resp.data.items[0].id.videoId}`);
