@@ -18,7 +18,7 @@ router.route('/').get((req, res) => {
     if (nd.getDay() == 5) {
         res.json(`${req.query?.response ? req.query.response.replace('%20', '  ') : true}`);
     } else {
-        res.json(`${req.query?.response ? '' : true}`);
+        res.json(`${req.query?.response ? '' : false}`);
     }
 });
 
