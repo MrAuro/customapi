@@ -17,12 +17,14 @@ app.use(cors());
 app.use(express.json());
 
 const youtubeRouter = require('./routes/youtube');
+const fridayRouter = require('./routes/friday');
 
 app.get('/', (req, res) => {
     res.sendStatus(200);
 });
 
 app.use('/youtube', youtubeRouter);
+app.use('/friday', fridayRouter);
 
 app.listen(port, () => {
     console.log(`Server is running on port ${port}`);
