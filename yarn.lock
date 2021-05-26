@@ -89,6 +89,11 @@ asynckit@^0.4.0:
   resolved "https://registry.yarnpkg.com/asynckit/-/asynckit-0.4.0.tgz#c79ed97f7f34cb8f2ba1bc9790bcc366474b4b79"
   integrity sha1-x57Zf380y48robyXkLzDZkdLS3k=
 
+auro-ms-conversion@^1.2.0:
+  version "1.2.0"
+  resolved "https://registry.yarnpkg.com/auro-ms-conversion/-/auro-ms-conversion-1.2.0.tgz#43896bc48e474971bf6841306876fbbfacec4ca6"
+  integrity sha512-ZMV5IA1mQ5LdqnJqwSmJAp40QsjK3Bt+QbxqzTxp8QgcHWsdJ3TfO2ZItgQHXfrvEa2NzzsJVIaMV99+IdtTcw==
+
 axios@^0.21.1:
   version "0.21.1"
   resolved "https://registry.yarnpkg.com/axios/-/axios-0.21.1.tgz#22563481962f4d6bde9a76d516ef0e5d3c09b2b8"
