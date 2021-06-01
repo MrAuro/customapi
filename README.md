@@ -25,3 +25,11 @@ response?: What should the response be if the day of the week is friday? (String
 Returns the latest tweet and URL of a twitter account
 
 noping?: Should any words with @'s use a zero width character to prevent pings? [defaults false]
+
+### /time/
+
+#### /conversion/:milliseconds
+
+Returns a human readable string from milliseconds
+
+long?: Should the response be in long form (hours instead of h) (Boolean) [defaults false]

@@ -120,6 +120,10 @@ aws4@^1.8.0:
   version "1.11.0"
   resolved "https://registry.yarnpkg.com/aws4/-/aws4-1.11.0.tgz#d61f46d83b2519250e2784daf5b09479a8b41c59"
   integrity sha512-xh1Rl34h6Fi1DC2WWKfxUTVqRsNnr6LsKz2+hfwDxQJWmrx8+c7ylaqBMcHfl1U1r2dsifOvKX3LQuLNZ+XSvA==
+auro-ms-conversion@^1.2.0:
+  version "1.2.0"
+  resolved "https://registry.yarnpkg.com/auro-ms-conversion/-/auro-ms-conversion-1.2.0.tgz#43896bc48e474971bf6841306876fbbfacec4ca6"
+  integrity sha512-ZMV5IA1mQ5LdqnJqwSmJAp40QsjK3Bt+QbxqzTxp8QgcHWsdJ3TfO2ZItgQHXfrvEa2NzzsJVIaMV99+IdtTcw==
 
 axios@^0.21.1:
   version "0.21.1"
