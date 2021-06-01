@@ -18,6 +18,7 @@ app.use(express.json());
 
 const youtubeRouter = require('./routes/youtube');
 const fridayRouter = require('./routes/friday');
+const twitterRouter = require('./routes/twitter');
 const timeRouter = require('./routes/time');
 
 app.get('/', (req, res) => {
@@ -26,6 +27,7 @@ app.get('/', (req, res) => {
 
 app.use('/youtube', youtubeRouter);
 app.use('/friday', fridayRouter);
+app.use('/twitter', twitterRouter);
 app.use('/time', timeRouter);
 
 app.listen(port, () => {
