@@ -20,6 +20,7 @@ const youtubeRouter = require('./routes/youtube');
 const fridayRouter = require('./routes/friday');
 const twitterRouter = require('./routes/twitter');
 const timeRouter = require('./routes/time');
+const twitchRouter = require('./routes/twitch');
 
 app.get('/', (req, res) => {
     res.sendStatus(200);
@@ -29,6 +30,7 @@ app.use('/youtube', youtubeRouter);
 app.use('/friday', fridayRouter);
 app.use('/twitter', twitterRouter);
 app.use('/time', timeRouter);
+app.use('/twitch', twitchRouter);
 
 app.listen(port, () => {
     console.log(`Server is running on port ${port}`);

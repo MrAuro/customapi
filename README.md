@@ -33,3 +33,13 @@ noping?: Should any words with @'s use a zero width character to prevent pings? 
 Returns a human readable string from milliseconds
 
 long?: Should the response be in long form (hours instead of h) (Boolean) [defaults false]
+
+### /twitch/
+
+#### /chatters/all/:channel
+
+Returns all the chatters in a specified channel
+
+#### /chatters/random/:channel
+
+Returns a random chatter in a specified channel
