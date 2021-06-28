@@ -215,7 +215,7 @@ let KNOWN_BOTS = [
         Returns all the chatters in a specified channel
 */
 router.route('/chatters/all/:channel').get((req, res) => {
-    if (!req.params.channel) return res.json(`Missing milliseconds`).sendStatus(400);
+    if (!req.params.channel) return res.json(`Missing channel`).sendStatus(400);
 
     axios
         .get(`https://tmi.twitch.tv/group/user/${req.params.channel}/chatters`)
@@ -253,7 +253,7 @@ router.route('/chatters/all/:channel').get((req, res) => {
         Returns a random chatter in a specified channel
 */
 router.route('/chatters/random/:channel').get((req, res) => {
-    if (!req.params.channel) return res.json(`Missing milliseconds`).sendStatus(400);
+    if (!req.params.channel) return res.json(`Missing channel`).sendStatus(400);
 
     axios
         .get(`https://tmi.twitch.tv/group/user/${req.params.channel}/chatters`)
@@ -271,6 +271,31 @@ router.route('/chatters/random/:channel').get((req, res) => {
                 }
 
                 return res.json(allChatters[Math.floor(Math.random() * allChatters.length)]);
+            }
+        })
+        .catch((err) => {
+            if (err.status == 404) {
+                return res.json('Channel not found').sendStatus(404);
+            } else {
+                return res.json('Unknown error').sendStatus(404);
+            }
+        });
+});
+
+/*
+        /chatters/mods/:channel
+        Returns a list of mods in a channel
+*/
+router.route('/chatters/mods/:channel').get((req, res) => {
+    if (!req.params.channel) return res.json(`Missing channel`).sendStatus(400);
+
+    axios
+        .get(`https://tmi.twitch.tv/group/user/${req.params.channel}/chatters`)
+        .then((resp) => {
+            if (resp.data.chatters.moderators.length == 0) {
+                return res.json('No mods pepeLaugh');
+            } else {
+                return res.json(`${resp.data.chatters.moderators.join(' ')}`);
             }
         })
         .catch((err) => {

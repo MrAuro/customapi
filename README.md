@@ -43,3 +43,7 @@ Returns all the chatters in a specified channel
 #### /chatters/random/:channel
 
 Returns a random chatter in a specified channel
+
+#### /chatters/mods/:channel
+
+Returns the mods of a channel if any are in the room currently
